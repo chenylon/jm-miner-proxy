@@ -1,0 +1,39 @@
+{
+  "inbounds": [
+   // inbound，接收客户端主动发起的请求
+    {
+      "tag": "tunnel",// 标签，路由中用到
+      "port":5518,
+      "protocol":"vmess",
+      "settings":{
+        "clients":[
+          {
+            "id":"<your v2ray id>",
+            "alterId":64
+          }
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol":"freedom",
+      "settings":{
+      },
+      "tag":"out"
+    }
+  ],
+  "routing":{
+    "rules":[
+      {
+        // to nginx
+        "type":"field",
+        "inboundTag":[
+          "tunnel"
+        ],
+        "outboundTag":"out"
+      }
+    ]
+  }
+}
+
