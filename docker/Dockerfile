@@ -17,6 +17,8 @@ RUN cd nginx-1.19.0 \
   && make install
 
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
+COPY ulimit.sh /usr/local/ulimit.sh
+RUN bash /usr/local/ulimit.sh
 
 RUN echo "daemon off;" >> /usr/local/nginx/conf/nginx.conf
 ENV PATH /usr/local/nginx/sbin:$PATH
