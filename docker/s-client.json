@@ -1,0 +1,49 @@
+{
+  "inbounds": [
+    {
+      // 接受 节点 的inbound
+      "tag":"external", // 标签，路由中用到
+      "port":3333,
+      // 开放 3333 端口，用于接收外部的 HTTP 访问
+      "protocol":"dokodemo-door",
+        "settings":{
+          "address":"<pool address>",
+          "port":3333, //HTTP 监听的端口为 3333
+          "network":"tcp"
+        }
+    }
+  ],
+  "outbounds": [
+    {
+      //A连接B的outbound
+      "tag":"tunnel", // jm 连接 rk 的 outbound 的标签，在路由中会用到
+      "protocol":"vmess",
+      "settings":{
+        "vnext":[
+          {
+            "address":"<ip address>", // rk 地址，IP 或 实际的域名
+            "port":2201,
+            "users":[
+              {
+                "id":"<v2ray id>",
+                "alterId":0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "routing":{
+    "rules":[
+      {  //路由规则，接收 节点 请求后发给 RK
+        "type":"field",
+        "inboundTag":[
+          "external"
+        ],
+        "outboundTag":"tunnel"
+      }
+    ]
+  }
+}
+

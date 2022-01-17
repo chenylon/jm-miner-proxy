@@ -1,5 +1,5 @@
 # 系统
-echo 'fs.file-max = 65535' | sudo tee -a /etc/sysctl.conf
+echo 'fs.file-max = 655350' | sudo tee -a /etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_max = 1048576' | sudo tee -a /etc/sysctl.conf
 echo 'net.nf_conntrack_max = 1048576' | sudo tee -a /etc/sysctl.conf
 echo 'ulimit -SHn 102400' | sudo tee -a /etc/profile

@@ -9,7 +9,7 @@
         "clients":[
           {
             "id":"<your v2ray id>",
-            "alterId":64
+            "alterId":0
           }
         ]
       }
