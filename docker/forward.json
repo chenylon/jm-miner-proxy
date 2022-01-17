@@ -6,7 +6,7 @@
       "protocol":"dokodemo-door",
         "settings":{
           "network":"tcp",
-          "address":"seager-rk-1.ppsuper.com:5518",
+          "address":"s-rk-1.domain.com:5518",
           "port":5518
         }
     },
@@ -16,7 +16,7 @@
       "protocol":"dokodemo-door",
         "settings":{
           "network":"tcp",
-          "address":"seager-az-1.ppsuper.com:5518",
+          "address":"s-az-1.domain.com:5518",
           "port":5518
         }
     },
@@ -26,7 +26,7 @@
       "protocol":"dokodemo-door",
         "settings":{
           "network":"tcp",
-          "address":"seager-isl-1.ppsuper.com:5518",
+          "address":"s-isl-1.domain.com:5518",
           "port":5518
         }
     }
@@ -36,21 +36,21 @@
       "tag":"rk_outbound",
       "protocol":"freedom",
       "settings":{
-        "redirect":"seager-rk-1.ppsuper.com:5518"
+        "redirect":"s-rk-1.domain.com:5518"
       }
     },
     {
       "tag":"az_outbound",
       "protocol":"freedom",
       "settings":{
-        "redirect":"seager-az-1.ppsuper.com:5518"
+        "redirect":"s-az-1.domain.com:5518"
       }
     },
     {
       "tag":"isl_outbound",
       "protocol":"freedom",
       "settings":{
-        "redirect":"seager-isl-1.ppsuper.com:5518"
+        "redirect":"s-isl-1.domain.com:5518"
       }
     }
   ],
