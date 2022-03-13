@@ -1,0 +1,61 @@
+{
+  "reverse":{
+    "bridges":[
+      {
+        "tag":"bridge",
+        "domain":"private.cloud.com"
+      }
+    ]
+  },
+  "outbounds": [
+    {
+
+      "tag":"tunnel",
+      "protocol":"vmess",
+      "settings":{
+        "vnext":[
+          {
+            "address":"172.0.0.220",
+            "port":2204,
+            "users":[
+              {
+                "id":"<uuid>",
+                "alterId":0
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "protocol":"freedom",
+      "settings":{
+      },
+      "tag":"out"
+    }
+  ],
+  "routing":{
+    "rules":[
+      {
+
+        "type":"field",
+        "inboundTag":[
+          "bridge"
+        ],
+        "domain":[
+          "full:private.cloud.com"
+        ],
+        "outboundTag":"tunnel"
+      },
+      {
+        "type":"field",
+        "inboundTag":[
+          "bridge"
+        ],
+        "outboundTag":"out"
+      }
+    ]
+  }
+}
+
